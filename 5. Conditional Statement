@@ -1,0 +1,6 @@
+threshold = 50
+
+if average > threshold:
+    performance = "High Performance"
+else:
+    performance = "Needs Improvement"
