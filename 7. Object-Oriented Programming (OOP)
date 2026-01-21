@@ -1,0 +1,44 @@
+class DataSet:
+    def __init__(self, data_file, category_file):
+        self.data_file = data_file
+        self.category_file = category_file
+        self.data = []
+        self.categories = set()
+
+    def load_data(self):
+        try:
+            with open(self.data_file, "r") as file:
+                for line in file:
+                    line = line.strip()
+                    try:
+                        self.data.append(float(line))
+                    except ValueError:
+                        pass
+
+            with open(self.category_file, "r") as file:
+                for line in file:
+                    line = line.strip()
+                    if line:
+                        self.categories.add(line)
+
+        except FileNotFoundError:
+            print("One or more files not found")
+
+    def calculate_statistics(self):
+        self.total = calculate_total(self.data)
+        self.average = calculate_average(self.data)
+        self.minimum = calculate_minimum(self.data)
+        self.maximum = calculate_maximum(self.data)
+
+        if self.average > 50:
+            self.performance = "High Performance"
+        else:
+            self.performance = "Needs Improvement"
+
+    def display_results(self):
+        print("Total:", self.total)
+        print("Average:", self.average)
+        print("Minimum:", self.minimum)
+        print("Maximum:", self.maximum)
+        print("Performance:", self.performance)
+        print("Unique Categories:", len(self.categories))
