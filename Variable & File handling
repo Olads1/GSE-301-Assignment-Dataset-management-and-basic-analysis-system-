@@ -1,0 +1,4 @@
+# File name containing numerical data (one number per line)
+data_file = "data.txt"
+
+numbers = []   # list to store numerical data
