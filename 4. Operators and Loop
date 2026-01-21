@@ -1,0 +1,5 @@
+if numbers:
+    total = calculate_total(numbers)
+    average = calculate_average(numbers)
+    minimum = calculate_minimum(numbers)
+    maximum = calculate_maximum(numbers)
