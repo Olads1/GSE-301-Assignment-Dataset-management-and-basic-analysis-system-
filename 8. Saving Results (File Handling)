@@ -1,0 +1,14 @@
+dataset = DataSet("data.txt", "categories.txt")
+dataset.load_data()
+dataset.calculate_statistics()
+dataset.display_results()
+
+with open("report.txt", "w") as report:
+    report.write("DATA ANALYSIS REPORT\n")
+    report.write("-------------------\n")
+    report.write(f"Total: {dataset.total}\n")
+    report.write(f"Average: {dataset.average}\n")
+    report.write(f"Minimum: {dataset.minimum}\n")
+    report.write(f"Maximum: {dataset.maximum}\n")
+    report.write(f"Performance: {dataset.performance}\n")
+    report.write(f"Unique Categories: {len(dataset.categories)}\n")
