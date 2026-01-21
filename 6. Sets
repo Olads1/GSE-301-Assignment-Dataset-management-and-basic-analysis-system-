@@ -1,0 +1,15 @@
+category_file = "categories.txt"
+categories = set()
+
+try:
+    with open(category_file, "r") as file:
+        for line in file:
+            line = line.strip()
+            if line != "":
+                categories.add(line)
+
+    unique_count = len(categories)
+
+except FileNotFoundError:
+    print("Category file not found")
+    unique_count = 0
