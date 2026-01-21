@@ -1,0 +1,20 @@
+try:
+    with open(data_file, "r") as file:
+        for line in file:
+            line = line.strip()
+            if line == "":
+                continue
+            try:
+                numbers.append(float(line))
+            except ValueError:
+                print("Invalid (non-numeric) value ignored:", line)
+
+    if len(numbers) == 0:
+        raise ValueError("File is empty or has no valid numeric data")
+
+except FileNotFoundError:
+    print("Error: File does not exist")
+    numbers = []
+
+except ValueError as e:
+    print("Error:", e)
