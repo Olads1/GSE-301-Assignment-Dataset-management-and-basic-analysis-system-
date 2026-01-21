@@ -1,0 +1,29 @@
+def calculate_total(data):
+    total = 0
+    for value in data:
+        total += value
+    return total
+
+
+def calculate_average(data):
+    total = calculate_total(data)
+    count = 0
+    for _ in data:
+        count += 1
+    return total / count
+
+
+def calculate_minimum(data):
+    minimum = data[0]
+    for value in data:
+        if value < minimum:
+            minimum = value
+    return minimum
+
+
+def calculate_maximum(data):
+    maximum = data[0]
+    for value in data:
+        if value > maximum:
+            maximum = value
+    return maximum
